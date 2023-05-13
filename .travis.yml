@@ -5,23 +5,23 @@ services:
   - docker
 
 before_install:
-  - docker build -t dheeraj_chittari/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t dheeraj100/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true dheeraj_chittari/react-test npm test
+  - docker run -e CI=true dheeraj100/react-test npm test
 
 after_success:
-  - docker build -t dheeraj_chittari/multi-client ./client
-  - docker build -t dheeraj_chittari/multi-nginx ./nginx
-  - docker build -t dheeraj_chittari/multi-server ./server
-  - docker build -t dheeraj_chittari/multi-worker ./worker
+  - docker build -t dheeraj100/multi-client ./client
+  - docker build -t dheeraj100/multi-nginx ./nginx
+  - docker build -t dheeraj100/multi-server ./server
+  - docker build -t dheeraj100/multi-worker ./worker
   # Log in to the docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - echo "\$DOCKER_PASSWORD" | docker login -u "\$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push dheeraj_chittari/multi-client
-  - docker push dheeraj_chittari/multi-nginx
-  - docker push dheeraj_chittari/multi-server
-  - docker push dheeraj_chittari/multi-worker
+  - docker push dheeraj100/multi-client
+  - docker push dheeraj100/multi-nginx
+  - docker push dheeraj100/multi-server
+  - docker push dheeraj100/multi-worker
 
 #deploy:
 #  provider: elasticbeanstalk

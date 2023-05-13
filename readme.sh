@@ -13,6 +13,7 @@ docker build -t complex-client:latest -f ./client/Dockerfile.dev ./client
 # Create a new account in TravisCi
 # Give Travis access to the repository
 # Add .travis.yml file to the root of the project
+# Add docker id and password as environment variables in TravisCi
 # Commit and push the changes to the repository
 # Check the build status in TravisCi
 
