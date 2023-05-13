@@ -9,3 +9,10 @@ localhost:3050
 
 # To build a single service
 docker build -t complex-client:latest -f ./client/Dockerfile.dev ./client
+
+# Create a new account in TravisCi
+# Give Travis access to the repository
+# Add .travis.yml file to the root of the project
+# Commit and push the changes to the repository
+# Check the build status in TravisCi
+
