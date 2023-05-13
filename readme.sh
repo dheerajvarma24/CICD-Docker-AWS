@@ -9,4 +9,3 @@ localhost:3050
 
 # To build a single service
 docker build -t complex-client:latest -f ./client/Dockerfile.dev ./client
-
